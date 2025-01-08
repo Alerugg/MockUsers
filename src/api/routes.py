@@ -8,6 +8,8 @@ from flask_cors import CORS
 from flask import request, jsonify
 import uuid
 from datetime import datetime
+from sqlalchemy.sql import func  # Importar func para consultas aleatorias
+
 
 
 
@@ -17,14 +19,56 @@ api = Blueprint('api', __name__)
 CORS(api)
 
 
-@api.route('/hello', methods=['POST', 'GET'])
-def handle_hello():
+@api.route('/randomUsers/<int:count>', methods=['GET'])
+def get_random_users_count(count):
+    """
+    Obtener una cantidad específica de usuarios aleatorios
+    ---
+    tags:
+      - Users
+    parameters:
+      - name: count
+        in: path
+        type: integer
+        required: true
+        description: Número de usuarios aleatorios a obtener
+    responses:
+      200:
+        description: Lista de usuarios aleatorios
+        schema:
+          type: array
+          items:
+            $ref: '#/definitions/User'
+      400:
+        description: Parámetro 'count' inválido o no hay suficientes usuarios
+      500:
+        description: Error interno del servidor
+    """
+    try:
+        if count <= 0:
+            return jsonify({
+                "status": "fail",
+                "message": "El número de usuarios debe ser positivo."
+            }), 400
 
-    response_body = {
-        "message": "Hello! I'm a message that came from the backend, check the network tab on the google inspector and you will see the GET request"
-    }
+        total_users = User.query.count()
+        if total_users < count:
+            return jsonify({
+                "status": "fail",
+                "message": f"Solo hay {total_users} usuarios disponibles."
+            }), 400
 
-    return jsonify(response_body), 200
+        # Obtener usuarios aleatorios
+        random_users = User.query.order_by(func.random()).limit(count).all()
+        users_list = [user.serialize() for user in random_users]
+
+        return jsonify(users_list), 200
+    except Exception as e:
+        return jsonify({
+            "status": "fail",
+            "message": "Error al obtener usuarios aleatorios",
+            "details": str(e)
+        }), 500
 
 @api.route('/users', methods=['GET'])
 def get_users():
