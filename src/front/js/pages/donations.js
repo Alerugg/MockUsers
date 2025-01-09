@@ -7,7 +7,7 @@ export const Donations = () => {
             <h1 className="donations-title">Apoya Mock Users API</h1>
             <div className="donations-section">
                 <p className="donations-description">
-                    Gracias por considerar apoyar Mock Users API. Tu contribución nos ayuda a mantener el servicio, mejorar nuestras herramientas y expandir nuestras funcionalidades.
+                    Gracias por considerar apoyar Mock Users API. <br/> <br/> Tu contribución nos ayuda a mantener el servicio, mejorar nuestras herramientas y expandir nuestras funcionalidades.
                 </p>
                 <h2 className="donations-subtitle">Opciones de Donación</h2>
                 <ul className="donations-list">
@@ -16,11 +16,8 @@ export const Donations = () => {
                     </li>
                     <li>
                         <strong>Criptomonedas:</strong> 
-                        <p>Dirección BTC: <code>1A2b3C4d5E6f7G8h9I0j</code></p>
-                        <p>Dirección ETH: <code>0xa1B2c3D4e5F6g7H8i9J0</code></p>
-                    </li>
-                    <li>
-                        <strong>Patreon:</strong> <a href="https://www.patreon.com" target="_blank" rel="noopener noreferrer">Apóyanos en Patreon</a>
+                        <p>Dirección BTC: <code>3FebwBM9HQSMt3GPevhoDtGTZTDkkSkYDJ</code></p>
+                        <p>Dirección ETH(ERC20): <code>0xcd3414761394b106768a95108c18aad1708f972c</code></p>
                     </li>
                 </ul>
                 <p className="donations-thankyou">
