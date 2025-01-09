@@ -1,10 +1,17 @@
-import React, { Component } from "react";
+import React from "react";
+import "../../styles/footer.css";
 
 export const Footer = () => (
-	<footer className="footer mt-auto py-3 text-center">
+	<footer className="footer">
 		<p>
-			Made with <i className="fa fa-heart text-danger" /> by{" "}
-			<a href="http://www.4geeksacademy.com">4Geeks Academy</a>
+			Hecho con <i className="fa fa-heart text-danger" /> por{" "}
+			<a href="https://www.mockusers.com" target="_blank" rel="noopener noreferrer">
+				Mock Users
+			</a>{" "}
+			|{" "}
+			<a href="https://github.com/yourgithub" target="_blank" rel="noopener noreferrer">
+				GitHub
+			</a>
 		</p>
 	</footer>
 );

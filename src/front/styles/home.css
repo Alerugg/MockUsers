@@ -1,7 +1,69 @@
-/*
-    home.css: This website contains selectors only used in home.css
+/* frontend/src/styles/home.css */
 
-    All pages share the styles on index.css but you should create 
-    one more css for each page that will contain the selected used 
-    on that page only (the ones not reused in other pages).
-*/
+/* Importar la fuente Rubik Vinyl desde Google Fonts */
+@import url('https://fonts.googleapis.com/css2?family=Rubik+Vinyl&display=swap');
+
+.home-container {
+	display: flex;
+	flex-direction: column; /* Para que el h1 esté arriba de los botones */
+	justify-content: center;
+	align-items: center;
+	height: 100vh; /* Altura completa de la ventana */
+	background-color: #FFD700; /* Fondo amarillo */
+}
+
+.page-title {
+	font-family: 'Rubik Vinyl', serif; /* Fuente personalizada */
+	font-size: 120px; /* Tamaño grande para el título */
+	color: #000000; /* Color negro */
+	margin-bottom: 10px; /* Espaciado entre el título y los botones */
+	text-align: center;
+}
+
+.buttons-container {
+    margin-top: -70PX;
+	position: relative;
+	width: 900px; /* Ampliar contenedor para más espacio */
+	height: 500px; /* Altura ajustada para el diseño */
+}
+
+.circle-button {
+	position: absolute;
+	width: 250px; /* Tamaño de los botones */
+	height: 250px;
+	background-color: #ffffff; /* Fondo blanco */
+	border: 2px solid #000000; /* Borde negro */
+	border-radius: 20px; /* Bordes redondeados */
+	cursor: pointer;
+	font-size: 20px;
+	font-weight: bold;
+	text-align: center;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	transition: transform 0.3s, background-color 0.3s;
+}
+
+.circle-button:hover {
+	transform: scale(1.1);
+	background-color: #f0f0f0;
+}
+
+/* Posicionamiento para la forma de arcoiris */
+
+.buttons-container .circle-button:nth-child(1) {
+	top: 270px; /* Botón izquierdo, más abajo */
+	left: 50px; /* Hacia la izquierda */
+}
+
+.buttons-container .circle-button:nth-child(2) {
+	top: 50px; /* Botón central, más arriba */
+	left: 325px; /* Centrado horizontalmente */
+	z-index: 1; /* Superposición sobre los botones de abajo */
+	transform: translateY(70px); /* Ajuste para que se meta entre los de abajo */
+}
+
+.buttons-container .circle-button:nth-child(3) {
+	top: 270px; /* Botón derecho, más abajo */
+	left: 600px; /* Hacia la derecha, más separado del izquierdo */
+}
