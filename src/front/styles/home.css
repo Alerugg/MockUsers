@@ -1,7 +1,86 @@
-/*
-    home.css: This website contains selectors only used in home.css
+/* frontend/src/styles/home.css */
 
-    All pages share the styles on index.css but you should create 
-    one more css for each page that will contain the selected used 
-    on that page only (the ones not reused in other pages).
-*/
+/* Importar la fuente Rubik Vinyl desde Google Fonts */
+@import url('https://fonts.googleapis.com/css2?family=Rubik+Vinyl&display=swap');
+
+.home-container {
+	display: flex;
+	flex-direction: column; /* Para que el h1 esté arriba de los botones */
+	justify-content: center;
+	align-items: center;
+	min-height: calc(100vh - 120px); /* Resta el espacio del footer y navbar */
+	background-color: #FFD700; /* Fondo amarillo */
+	padding: 40px 20px 80px; /* Espaciado superior, lateral e inferior */
+	box-sizing: border-box; /* Incluye el padding en las dimensiones totales */
+}
+
+.page-title {
+	font-family: 'Rubik Vinyl', serif; /* Fuente personalizada */
+	font-size: 100px; /* Ajuste del tamaño para que no se corte */
+	color: #000000; /* Color negro */
+	margin-top: 20px;
+	margin-bottom: 10px; /* Espaciado entre el título y los botones */
+	text-align: center;
+	word-break: break-word; /* Asegura que el texto largo no se salga del contenedor */
+}
+
+.buttons-container {
+	margin-top: 2px; /* Espaciado entre el título y los botones */
+	position: relative;
+	width: 900px; /* Ancho del contenedor */
+	height: 500px; /* Altura ajustada para el diseño */
+	padding: 20px; /* Añadir padding para evitar que toquen los bordes */
+	box-sizing: border-box; /* Padding incluido en el ancho total */
+}
+
+.circle-button {
+	position: absolute;
+	width: 250px; /* Tamaño de los botones */
+	height: 250px;
+	background-color: #ffffff; /* Fondo blanco */
+	border: 2px solid #000000; /* Borde negro */
+	border-radius: 20px; /* Bordes redondeados */
+	cursor: pointer;
+	font-size: 20px;
+	font-weight: bold;
+	text-align: center;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	transition: transform 0.3s, background-color 0.3s;
+}
+
+.circle-button:hover {
+	transform: scale(1.1); /* Aumenta tamaño al hover */
+	background-color: #f0f0f0; /* Fondo más claro */
+}
+
+/* Posicionamiento para la forma de arcoiris */
+.buttons-container .circle-button:nth-child(1) {
+	top: 270px; /* Botón izquierdo, más abajo */
+	left: 50px; /* Hacia la izquierda */
+}
+
+.buttons-container .circle-button:nth-child(2) {
+	top: 70px; /* Botón central, más arriba */
+	left: 325px; /* Centrado horizontalmente */
+	z-index: 1; /* Superposición sobre los botones de abajo */
+}
+
+.buttons-container .circle-button:nth-child(3) {
+	top: 270px; /* Botón derecho, más abajo */
+	left: 600px; /* Hacia la derecha, más separado del izquierdo */
+}
+
+.footer {
+	background-color: #FFD700; /* Fondo amarillo */
+	color: #000000; /* Texto negro */
+	text-align: center;
+	padding: 15px 0;
+	font-size: 1rem;
+	font-weight: bold;
+	position: fixed; /* Fijado al fondo */
+	bottom: 0;
+	width: 100%;
+}
+

@@ -1,0 +1,24 @@
+/* frontend/src/styles/footer.css */
+
+.footer {
+	background-color: #FFD700; /* Fondo amarillo */
+	color: #000000; /* Texto negro */
+	text-align: center;
+	padding: 15px 0;
+	font-size: 1rem;
+	font-weight: bold;
+	position: fixed; /* Fijado al fondo */
+	bottom: 0;
+	width: 100%;
+	
+}
+
+.footer a {
+	color: #000000; /* Links en negro */
+	text-decoration: none; /* Sin subrayado */
+	transition: color 0.3s ease;
+}
+
+.footer a:hover {
+	color: #FF4500; /* Links cambian a un color rojo/naranja al pasar el mouse */
+}
