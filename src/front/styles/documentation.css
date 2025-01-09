@@ -1,0 +1,68 @@
+/* Ajustamos el body completo */
+body {
+    margin: 0;
+    background-color: #FFD700; /* Fondo amarillo */
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+}
+
+/* Contenedor principal */
+.documentation-container {
+    padding: 20px 30px;
+    background-color: #FFD700; /* Fondo amarillo */
+    color: #000000; /* Texto negro */
+    font-family: Arial, sans-serif;
+    flex: 1; /* Para asegurarse de ocupar el espacio completo */
+}
+
+/* Título principal */
+.documentation-title {
+    text-align: center;
+    font-size: 32px; /* Tamaño ajustado */
+    margin: 40px 0 30px 0; /* Espacio superior aumentado */
+    color: #000000;
+    font-weight: bold;
+}
+
+/* Sección */
+.documentation-section {
+    margin-bottom: 20px;
+    border: 2px solid #000000; /* Borde negro */
+    padding: 20px;
+    border-radius: 10px;
+    background-color: #FFFFFF; /* Fondo blanco para los boxes */
+}
+
+.section-title {
+    font-size: 22px; /* Ajustado */
+    margin-bottom: 10px;
+    color: #000000;
+    font-weight: bold;
+    text-align: center;
+}
+
+.section-description {
+    font-size: 16px; /* Ajustado */
+    color: #333333;
+    margin-bottom: 10px;
+    text-align: justify;
+}
+
+/* Estilo para el código JSON */
+.response-example {
+    background-color: #f0f0f0; /* Fondo claro para el JSON */
+    border: 1px solid #000000; /* Borde negro */
+    padding: 10px;
+    border-radius: 5px;
+    overflow: auto;
+    font-family: "Courier New", monospace; /* Estilo de código */
+    font-size: 14px;
+    color: #333333;
+    max-height: 200px; /* Limitar altura */
+}
+
+/* Footer para asegurar que el contenido se ajusta */
+footer {
+    background-color: #FFD700; /* Fondo amarillo */
+}

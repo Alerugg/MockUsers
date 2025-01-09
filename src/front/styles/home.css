@@ -8,23 +8,29 @@
 	flex-direction: column; /* Para que el h1 esté arriba de los botones */
 	justify-content: center;
 	align-items: center;
-	height: 100vh; /* Altura completa de la ventana */
+	min-height: calc(100vh - 120px); /* Resta el espacio del footer y navbar */
 	background-color: #FFD700; /* Fondo amarillo */
+	padding: 40px 20px 80px; /* Espaciado superior, lateral e inferior */
+	box-sizing: border-box; /* Incluye el padding en las dimensiones totales */
 }
 
 .page-title {
 	font-family: 'Rubik Vinyl', serif; /* Fuente personalizada */
-	font-size: 120px; /* Tamaño grande para el título */
+	font-size: 100px; /* Ajuste del tamaño para que no se corte */
 	color: #000000; /* Color negro */
+	margin-top: 20px;
 	margin-bottom: 10px; /* Espaciado entre el título y los botones */
 	text-align: center;
+	word-break: break-word; /* Asegura que el texto largo no se salga del contenedor */
 }
 
 .buttons-container {
-    margin-top: -70PX;
+	margin-top: 2px; /* Espaciado entre el título y los botones */
 	position: relative;
-	width: 900px; /* Ampliar contenedor para más espacio */
+	width: 900px; /* Ancho del contenedor */
 	height: 500px; /* Altura ajustada para el diseño */
+	padding: 20px; /* Añadir padding para evitar que toquen los bordes */
+	box-sizing: border-box; /* Padding incluido en el ancho total */
 }
 
 .circle-button {
@@ -45,25 +51,36 @@
 }
 
 .circle-button:hover {
-	transform: scale(1.1);
-	background-color: #f0f0f0;
+	transform: scale(1.1); /* Aumenta tamaño al hover */
+	background-color: #f0f0f0; /* Fondo más claro */
 }
 
 /* Posicionamiento para la forma de arcoiris */
-
 .buttons-container .circle-button:nth-child(1) {
 	top: 270px; /* Botón izquierdo, más abajo */
 	left: 50px; /* Hacia la izquierda */
 }
 
 .buttons-container .circle-button:nth-child(2) {
-	top: 50px; /* Botón central, más arriba */
+	top: 70px; /* Botón central, más arriba */
 	left: 325px; /* Centrado horizontalmente */
 	z-index: 1; /* Superposición sobre los botones de abajo */
-	transform: translateY(70px); /* Ajuste para que se meta entre los de abajo */
 }
 
 .buttons-container .circle-button:nth-child(3) {
 	top: 270px; /* Botón derecho, más abajo */
 	left: 600px; /* Hacia la derecha, más separado del izquierdo */
 }
+
+.footer {
+	background-color: #FFD700; /* Fondo amarillo */
+	color: #000000; /* Texto negro */
+	text-align: center;
+	padding: 15px 0;
+	font-size: 1rem;
+	font-weight: bold;
+	position: fixed; /* Fijado al fondo */
+	bottom: 0;
+	width: 100%;
+}
+

@@ -1,0 +1,93 @@
+/* Ajustamos el body completo */
+body {
+    margin: 0;
+    background-color: #FFD700; /* Fondo amarillo */
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+}
+
+/* Contenedor principal */
+.demo-container {
+    padding: 20px;
+    background-color: #FFD700; /* Fondo amarillo */
+    color: #000000; /* Texto negro */
+    font-family: Arial, sans-serif;
+    flex: 1; /* Para asegurarse de ocupar el espacio completo */
+}
+
+/* Título de la demo */
+.demo-title {
+    text-align: center;
+    font-size: 36px;
+    margin-bottom: 30px;
+    color: #000000;
+    font-weight: bold;
+}
+
+/* Sección de los ejemplos */
+.demo-section {
+    margin-bottom: 30px;
+    border: 2px solid #000000; /* Borde negro */
+    padding: 20px;
+    border-radius: 10px;
+    background-color: #FFFFFF; /* Fondo blanco para los boxes */
+}
+
+.section-title {
+    font-size: 24px;
+    margin-bottom: 10px;
+    color: #000000;
+    font-weight: bold;
+    text-align: center;
+}
+
+.section-description {
+    font-size: 16px;
+    color: #333333;
+    margin-bottom: 10px;
+    text-align: justify;
+}
+
+/* Estilo para el código JSON */
+.response-example {
+    background-color: #f0f0f0; /* Fondo claro para el JSON */
+    border: 1px solid #000000; /* Borde negro */
+    padding: 10px;
+    border-radius: 5px;
+    overflow: auto;
+    font-family: "Courier New", monospace; /* Estilo de código */
+    font-size: 14px;
+    color: #333333;
+    max-height: 200px; /* Limitar altura */
+}
+
+/* Input y botón */
+.input-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 10px;
+    margin-top: 10px;
+}
+
+.dynamic-input {
+    padding: 8px;
+    font-size: 16px;
+    border: 1px solid #000000;
+    border-radius: 5px;
+}
+
+.fetch-button {
+    padding: 8px 15px;
+    font-size: 16px;
+    color: #FFFFFF;
+    background-color: #000000;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+.fetch-button:hover {
+    background-color: #444444;
+}

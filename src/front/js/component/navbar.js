@@ -6,7 +6,7 @@ export const Navbar = () => {
 	return (
 		<nav className="navbar-invisible">
 			<div className="navbar-logo">
-				<Link to="/">
+				<Link className="logo-link" to="/">
 					<span className="navbar-brand">Mock Users</span>
 				</Link>
 			</div>

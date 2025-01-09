@@ -14,7 +14,7 @@ export const Home = () => {
 				<button className="circle-button" onClick={() => actions.navigateTo('documentacion')}>
 					Documentación
 				</button>
-				<button className="circle-button" onClick={() => actions.navigateTo('donaciones')}>
+				<button className="circle-button" onClick={() => actions.navigateTo('donations')}>
 					Donaciones
 				</button>
 				<button className="circle-button" onClick={() => actions.navigateTo('demo')}>

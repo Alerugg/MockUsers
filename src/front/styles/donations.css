@@ -1,0 +1,79 @@
+/* Ajustamos el body completo */
+body {
+    margin: 0;
+    background-color: #FFD700; /* Fondo amarillo */
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+}
+
+/* Contenedor principal */
+.donations-container {
+    padding: 20px 30px;
+    background-color: #FFD700; /* Fondo amarillo */
+    color: #000000; /* Texto negro */
+    font-family: Arial, sans-serif;
+    flex: 1; /* Para asegurarse de ocupar el espacio completo */
+    text-align: center;
+}
+
+/* Título principal */
+.donations-title {
+    text-align: center;
+    font-size: 32px; /* Tamaño ajustado */
+    margin: 40px 0 30px 0; /* Espacio superior aumentado */
+    color: #000000;
+    font-weight: bold;
+}
+
+/* Sección */
+.donations-section {
+    margin: 0 auto;
+    border: 2px solid #000000; /* Borde negro */
+    padding: 20px;
+    border-radius: 10px;
+    background-color: #FFFFFF; /* Fondo blanco para los boxes */
+    max-width: 800px; /* Para limitar el ancho */
+    text-align: justify;
+}
+
+/* Subtítulo */
+.donations-subtitle {
+    font-size: 22px; /* Ajustado */
+    margin-bottom: 10px;
+    color: #000000;
+    font-weight: bold;
+    text-align: center;
+}
+
+/* Lista de opciones */
+.donations-list {
+    list-style-type: none;
+    padding: 0;
+    font-size: 16px;
+    color: #333333;
+    text-align: left;
+}
+
+.donations-list li {
+    margin: 10px 0;
+}
+
+/* Agradecimiento */
+.donations-thankyou {
+    margin-top: 20px;
+    font-size: 18px;
+    font-weight: bold;
+    text-align: center;
+}
+
+/* Estilo para los enlaces */
+a {
+    color: #0000EE;
+    text-decoration: underline;
+}
+
+a:hover {
+    color: #FF4500;
+    text-decoration: none;
+}

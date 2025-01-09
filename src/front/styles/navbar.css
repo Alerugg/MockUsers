@@ -18,7 +18,7 @@
 .navbar-logo .navbar-brand {
 	color: #000000; /* Texto negro */
 	font-family: 'Rubik Vinyl', serif; /* Fuente Rubik Vinyl para el logo */
-	font-size: 1.8rem;
+	font-size: 1.6rem;
 	text-decoration: none; /* Sin subrayado */
 }
 
@@ -31,7 +31,7 @@
 	background-color: transparent; /* Fondo transparente */
 	border: 2px solid #000000; /* Borde negro */
 	color: #000000; /* Texto negro */
-	font-size: 1rem;
+	font-size: 0.85rem;
 	font-weight: bold;
 	padding: 8px 16px;
 	border-radius: 5px;
@@ -56,7 +56,7 @@
 	border: 2px solid #000000; /* Borde negro */
 	border-radius: 20px; /* Bordes redondeados (pill shape) */
 	padding: 5px 15px;
-	font-size: 0.9rem;
+	font-size: 0.85rem;
 	font-weight: bold;
 	text-align: center;
 	cursor: default; /* Sin cursor interactivo */
@@ -66,4 +66,8 @@
 .pill:hover {
 	background-color: #000000; /* Fondo negro al pasar el mouse */
 	color: #FFD700; /* Texto amarillo al pasar el mouse */
+}
+
+.logo-link{
+	text-decoration: none;
 }
