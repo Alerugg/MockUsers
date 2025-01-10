@@ -1,81 +1,149 @@
-# WebApp boilerplate with React JS and Flask API
 
-Build web applications using React.js for the front end and python/flask for your backend API.
+# Mock Users API 🌟
 
-- Documentation can be found here: https://start.4geeksacademy.com/starters/react-flask
-- Here is a video on [how to use this template](https://www.loom.com/share/f37c6838b3f1496c95111e515e83dd9b)
-- Integrated with Pipenv for package managing.
-- Fast deployment to heroku [in just a few steps here](https://start.4geeksacademy.com/backend/deploy-heroku-posgres).
-- Use of .env file.
-- SQLAlchemy integration for database abstraction.
+¡Bienvenido a Mock Users API! Esta herramienta fue creada para desarrolladores que necesitan poblar sus aplicaciones con datos de usuario de manera rápida y sencilla. Perfecta para pruebas, desarrollo y demos.
 
-### 1) Installation:
+---
 
-> If you use Github Codespaces (recommended) or Gitpod this template will already come with Python, Node and the Posgres Database installed. If you are working locally make sure to install Python 3.10, Node 
+## 🚀 Demo en vivo
 
-It is recomended to install the backend first, make sure you have Python 3.8, Pipenv and a database engine (Posgress recomended)
+Prueba la API directamente desde nuestra demo en vivo:  
+[**Enlace a la Demo**](https://mockusers-d417.onrender.com/demo)
 
-1. Install the python packages: `$ pipenv install`
-2. Create a .env file based on the .env.example: `$ cp .env.example .env`
-3. Install your database engine and create your database, depending on your database you have to create a DATABASE_URL variable with one of the possible values, make sure you replace the valudes with your database information:
+---
 
-| Engine    | DATABASE_URL                                        |
-| --------- | --------------------------------------------------- |
-| SQLite    | sqlite:////test.db                                  |
-| MySQL     | mysql://username:password@localhost:port/example    |
-| Postgress | postgres://username:password@localhost:5432/example |
+## 💡 Características
 
-4. Migrate the migrations: `$ pipenv run migrate` (skip if you have not made changes to the models on the `./src/api/models.py`)
-5. Run the migrations: `$ pipenv run upgrade`
-6. Run the application: `$ pipenv run start`
+- **Endpoint dinámico:** `/api/randomUsers/<count>` para generar cualquier cantidad de usuarios al instante.
+- **Interfaz de exploración:** Una demo interactiva para ver los resultados de los endpoints.
+- **Fácil integración:** Compatible con cualquier stack de desarrollo.
 
-> Note: Codespaces users can connect to psql by typing: `psql -h localhost -U gitpod example`
+---
 
-### Undo a migration
+## 📚 Endpoints
 
-You are also able to undo a migration by running
-
-```sh
-$ pipenv run downgrade
+### **`/api/users`**
+Devuelve una lista de 1000 usuarios.  
+**Ejemplo de respuesta:**
+```json
+[
+  {
+    "address": {
+      "city": "San José",
+      "country": "Costa Rica",
+      "street": "El Prado"
+    },
+    "birth_country": "Uruguay",
+    "birthday": "1975-10-04",
+    "email": "javier.cruz522@hotmail.com",
+    "id": 524,
+    "identification": "153562Q625",
+    "last_name": "Cruz",
+    "name": "Javier",
+    "password": "javiercruz123",
+    "phone": "+777-8015173"
+  }
+]
 ```
 
-### Backend Populate Table Users
+### **`/api/randomUsers/<count>`**
+Endpoint dinámico que devuelve una cantidad aleatoria de usuarios según el número especificado en el parámetro `<count>`.  
+Por ejemplo, si haces una solicitud a `/api/randomUsers/2`, obtendrás algo como esto:
 
-To insert test users in the database execute the following command:
-
-```sh
-$ flask insert-test-users 5
+**Ejemplo de respuesta:**
+```json
+[
+  {
+    "address": {
+      "city": "San José",
+      "country": "Costa Rica",
+      "street": "El Prado"
+    },
+    "birth_country": "Uruguay",
+    "birthday": "1975-10-04",
+    "email": "javier.cruz522@hotmail.com",
+    "id": 524,
+    "identification": "153562Q625",
+    "last_name": "Cruz",
+    "name": "Javier",
+    "password": "javiercruz123",
+    "phone": "+777-8015173"
+  },
+  {
+    "address": {
+      "city": "Madrid",
+      "country": "Spain",
+      "street": "Las Heras"
+    },
+    "birth_country": "Costa Rica",
+    "birthday": "1982-07-01",
+    "email": "sebastián.jimenez57@outlook.com",
+    "id": 58,
+    "identification": "3Y36",
+    "last_name": "Jimenez",
+    "name": "Sebastián",
+    "password": "sebastiánjimenez123",
+    "phone": "+953-3610768"
+  }
+]
 ```
 
-And you will see the following message:
+---
 
-```
-  Creating test users
-  test_user1@test.com created.
-  test_user2@test.com created.
-  test_user3@test.com created.
-  test_user4@test.com created.
-  test_user5@test.com created.
-  Users created successfully!
-```
+## 🛠 Instalación
 
-### **Important note for the database and the data inside it**
+1. Clona el repositorio:  
+   ```bash
+   git clone https://github.com/tuusuario/mock-users-api.git
+   cd mock-users-api
+   ```
 
-Every Github codespace environment will have **its own database**, so if you're working with more people eveyone will have a different database and different records inside it. This data **will be lost**, so don't spend too much time manually creating records for testing, instead, you can automate adding records to your database by editing ```commands.py``` file inside ```/src/api``` folder. Edit line 32 function ```insert_test_data``` to insert the data according to your model (use the function ```insert_test_users``` above as an example). Then, all you need to do is run ```pipenv run insert-test-data```.
+2. Configura el backend:
+   - Asegúrate de tener Python 3.10, Node.js y PostgreSQL instalados.
+   - Instala los paquetes backend:
+     ```bash
+     pipenv install
+     ```
+   - Crea y configura el archivo `.env` basado en `.env.example`:
+     ```bash
+     cp .env.example .env
+     ```
+   - Inicia la base de datos:
+     ```bash
+     pipenv run init
+     pipenv run migrate
+     pipenv run upgrade
+     ```
 
-### Front-End Manual Installation:
+3. Configura el frontend:
+   - Instala los paquetes frontend:
+     ```bash
+     npm install
+     ```
+   - Inicia la aplicación frontend:
+     ```bash
+     npm run start
+     ```
 
--   Make sure you are using node version 14+ and that you have already successfully installed and runned the backend.
+4. Ejecuta la aplicación completa:
+   ```bash
+   pipenv run start
+   ```
 
-1. Install the packages: `$ npm install`
-2. Start coding! start the webpack dev server `$ npm run start`
+---
 
-## Publish your website!
+## 🌟 Próximas mejoras (v2)
 
-This boilerplate it's 100% read to deploy with Render.com and Heroku in a matter of minutes. Please read the [official documentation about it](https://start.4geeksacademy.com/deploy).
+La próxima versión incluirá:
+- Datos más realistas y robustos, incluyendo estado civil, hobbies, ingresos y más.
+- Posibilidad de filtrar usuarios por país o región.
+- Soporte para datos congruentes como números de teléfono y direcciones específicos por país.
 
-### Contributors
+¡Mantente atento para más actualizaciones!
 
-This template was built as part of the 4Geeks Academy [Coding Bootcamp](https://4geeksacademy.com/us/coding-bootcamp) by [Alejandro Sanchez](https://twitter.com/alesanchezr) and many other contributors. Find out more about our [Full Stack Developer Course](https://4geeksacademy.com/us/coding-bootcamps/part-time-full-stack-developer), and [Data Science Bootcamp](https://4geeksacademy.com/us/coding-bootcamps/datascience-machine-learning).
+---
 
-You can find other templates and resources like this at the [school github page](https://github.com/4geeksacademy/).
+## 📬 Contacto
+
+Para sugerencias o mejoras, no dudes en crear un issue o contactarnos en [Linkedin](https://www.linkedin.com/in/aleruggeril/).
+
