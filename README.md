@@ -8,7 +8,7 @@
 ## 🚀 Demo en vivo
 
 Prueba la API directamente desde nuestra demo en vivo:  
-[**Enlace a la Demo**](https://mockusers-d417.onrender.com/demo)
+[**Enlace a la Demo**](https://mockusers-d417.onrender.com)
 
 ---
 
