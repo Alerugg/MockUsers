@@ -1,73 +1,97 @@
-/* frontend/src/styles/navbar.css */
-
-/* Estilo del navbar invisible */
+/* Navbar con estilo cómic */
 .navbar-invisible {
-	background-color: #FFD700; /* Fondo amarillo, igual al fondo principal */
-	border: none; /* Sin borde */
+	background-color: #FFD700; /* Fondo amarillo */
 	display: flex;
 	justify-content: space-between;
 	align-items: center;
-	padding: 10px 20px;
+	padding: 15px 30px;
 	position: fixed;
 	top: 0;
 	width: 100%;
 	z-index: 10;
+
 }
 
-/* Logo a la izquierda */
+/* Logo con estilo más destacado */
 .navbar-logo .navbar-brand {
-	color: #000000; /* Texto negro */
-	font-family: 'Rubik Vinyl', serif; /* Fuente Rubik Vinyl para el logo */
-	font-size: 1.6rem;
-	text-decoration: none; /* Sin subrayado */
+	color: #000000;
+	font-family: 'Rubik Vinyl', serif;
+	font-size: 2rem;
+	text-decoration: none;
+	text-shadow: 2px 2px 0px #000000; /* Sombra tipo cómic */
+	transition: transform 0.3s;
 }
 
-/* Botón Demo a la derecha */
-.navbar-button-container {
-	margin-left: auto; /* Empujar hacia la derecha */
+/* Efecto hover en el logo */
+.navbar-logo .navbar-brand:hover {
+	transform: scale(1.1);
 }
 
-.navbar-button {
-	background-color: transparent; /* Fondo transparente */
-	border: 2px solid #000000; /* Borde negro */
-	color: #000000; /* Texto negro */
-	font-size: 0.85rem;
+/* Botón estilo globo de cómic */
+.navbar-bubble-button {
+	position: relative;
+	background-color: #ffffff;
+	color: #000000;
+	border: 3px solid #000000;
+	border-radius: 20px;
+	padding: 10px 20px;
+	font-size: 1rem;
 	font-weight: bold;
-	padding: 8px 16px;
-	border-radius: 5px;
 	cursor: pointer;
-	transition: all 0.3s ease;
+	box-shadow: 3px 3px 0px #000000;
+	transition: transform 0.3s, box-shadow 0.3s;
 }
 
-.navbar-button:hover {
-	background-color: #000000; /* Fondo negro al pasar el mouse */
-	color: #FFD700; /* Texto amarillo al pasar el mouse */
+/* Cola del globo */
+.navbar-bubble-button::after {
+	content: '';
+	position: absolute;
+	bottom: -12px;
+	left: 20px;
+	width: 0;
+	height: 0;
+	border: 10px solid transparent;
+	border-top-color: #ffffff;
+	border-bottom: 0;
+	border-right: 0;
+	transform: rotate(-45deg);
+	box-shadow: -2px 2px 0px #000000;
 }
 
-/* Pills */
+/* Hover del botón */
+.navbar-bubble-button:hover {
+	transform: scale(1.05);
+	box-shadow: 5px 5px 0px #000000;
+	background-color: #f0f0f0;
+}
+
+/* Pills con estilo cómic */
 .navbar-pills {
 	display: flex;
-	gap: 10px; /* Espaciado entre pills */
+	gap: 15px;
 }
 
 .pill {
-	background-color: #ffffff; /* Fondo blanco */
-	color: #000000; /* Texto negro */
-	border: 2px solid #000000; /* Borde negro */
-	border-radius: 20px; /* Bordes redondeados (pill shape) */
-	padding: 5px 15px;
-	font-size: 0.85rem;
+	background-color: #ffffff;
+	color: #000000;
+	border: 3px solid #000000;
+	border-radius: 25px;
+	padding: 8px 18px;
+	font-size: 0.9rem;
 	font-weight: bold;
-	text-align: center;
-	cursor: default; /* Sin cursor interactivo */
+	box-shadow: 3px 3px 0px #000000;
+	transition: transform 0.3s, background-color 0.3s;
+	cursor: default;
 }
 
-/* Hover para pills */
+/* Hover de las pills */
 .pill:hover {
-	background-color: #000000; /* Fondo negro al pasar el mouse */
-	color: #FFD700; /* Texto amarillo al pasar el mouse */
+	background-color: #000000;
+	color: #FFD700;
+	transform: scale(1.05);
 }
 
-.logo-link{
+/* Enlace del logo sin subrayado */
+.logo-link {
 	text-decoration: none;
 }
