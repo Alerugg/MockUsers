@@ -5,45 +5,51 @@ body {
     min-height: 100vh;
     display: flex;
     flex-direction: column;
+    font-family: Arial, sans-serif;
 }
 
 /* Contenedor principal */
 .donations-container {
-    padding: 20px 30px;
-    background-color: #FFD700; /* Fondo amarillo */
-    color: #000000; /* Texto negro */
-    font-family: Arial, sans-serif;
-    flex: 1; /* Para asegurarse de ocupar el espacio completo */
+    padding: 100px 30px 30px; /* Mayor margen superior para evitar el Navbar */
+    color: #000000;
+    flex: 1;
     text-align: center;
 }
 
 /* Título principal */
 .donations-title {
-    text-align: center;
-    font-size: 32px; /* Tamaño ajustado */
-    margin: 40px 0 30px 0; /* Espacio superior aumentado */
+    font-family: 'Rubik Vinyl', serif; /* Fuente coherente con el Navbar */
+    font-size: 48px;
     color: #000000;
-    font-weight: bold;
+    margin-bottom: 20px;
+    text-shadow: 2px 2px 0px #000000; /* Sombra tipo cómic */
 }
 
-/* Sección */
+/* Caja de donaciones mejorada */
 .donations-section {
     margin: 0 auto;
-    border: 2px solid #000000; /* Borde negro */
-    padding: 20px;
-    border-radius: 10px;
-    background-color: #FFFFFF; /* Fondo blanco para los boxes */
-    max-width: 800px; /* Para limitar el ancho */
+    padding: 30px 40px;
+    border-radius: 15px;
+    background-color: #FFFFFF;
+    max-width: 700px;
     text-align: justify;
+    border: 3px solid #000000;
+    box-shadow: 5px 5px 0px #000000;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+/* Efecto hover en la caja */
+.donations-section:hover {
+    transform: scale(1.02);
+    box-shadow: 8px 8px 0px #000000;
 }
 
 /* Subtítulo */
 .donations-subtitle {
-    font-size: 22px; /* Ajustado */
-    margin-bottom: 10px;
-    color: #000000;
-    font-weight: bold;
+    font-size: 24px;
+    margin-top: 20px;
     text-align: center;
+    text-decoration: underline;
 }
 
 /* Lista de opciones */
@@ -52,28 +58,39 @@ body {
     padding: 0;
     font-size: 16px;
     color: #333333;
-    text-align: left;
 }
 
+/* Elementos de la lista */
 .donations-list li {
-    margin: 10px 0;
+    margin: 15px 0;
 }
 
 /* Agradecimiento */
 .donations-thankyou {
-    margin-top: 20px;
+    margin-top: 30px;
     font-size: 18px;
     font-weight: bold;
     text-align: center;
 }
 
-/* Estilo para los enlaces */
+/* Enlaces */
 a {
     color: #0000EE;
     text-decoration: underline;
+    transition: color 0.3s ease;
 }
 
+/* Hover en enlaces */
 a:hover {
     color: #FF4500;
     text-decoration: none;
+}
+
+/* Estilo para las direcciones de criptomonedas */
+code {
+    background-color: #f5f5f5;
+    padding: 3px 6px;
+    border-radius: 5px;
+    font-weight: bold;
+    color: #c0392b;
 }

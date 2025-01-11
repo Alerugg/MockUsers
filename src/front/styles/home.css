@@ -13,15 +13,16 @@
 	box-sizing: border-box;
 }
 
-/* Título con fuente original */
+/* Título con fuente Rubik Vinyl */
 .page-title {
-	font-family: 'Rubik Vinyl', serif;
+	font-family: 'Rubik Vinyl', cursive;
 	font-size: 100px;
 	color: #000000;
 	margin-top: 20px;
 	margin-bottom: 80px;
 	text-align: center;
 	word-break: break-word;
+	text-shadow: 2px 2px 0px #000000; /* Sombra tipo cómic */
 }
 
 /* Contenedor de los botones alineados horizontalmente */
@@ -31,6 +32,7 @@
 	align-items: center;
 	gap: 40px;
 	margin-top: 20px;
+	flex-wrap: wrap; /* Permite que los botones se acomoden si no hay espacio */
 }
 
 /* Botón estilo globo de cómic */
@@ -47,7 +49,7 @@
 	text-align: center;
 	box-shadow: 4px 4px 0px #000000;
 	transition: transform 0.3s, box-shadow 0.3s;
-	font-family: 'Rubik Vinyl', serif; /* Mantener la fuente */
+	font-family: 'Rubik Vinyl', cursive;
 }
 
 /* Pseudo-elemento para la "cola" del globo */
@@ -71,4 +73,54 @@
 	transform: scale(1.08);
 	box-shadow: 6px 6px 0px #000000;
 	background-color: #f0f0f0;
+}
+
+/* 🔎 Responsive para pantallas medianas */
+@media (max-width: 1024px) {
+	.page-title {
+		font-size: 70px; /* Reducir el tamaño del título */
+		margin-bottom: 60px;
+	}
+
+	.comic-bubble-button {
+		padding: 15px 30px;
+		font-size: 20px;
+	}
+
+	.buttons-container {
+		gap: 20px; /* Menor separación entre botones */
+	}
+}
+
+/* 📱 Responsive para pantallas pequeñas (móviles) */
+@media (max-width: 768px) {
+	.page-title {
+		font-size: 48px; /* Título más pequeño */
+		margin-bottom: 40px;
+	}
+
+	.comic-bubble-button {
+		width: 80%; /* Botones más grandes y centrados */
+		padding: 15px 20px;
+		font-size: 18px;
+		margin-bottom: 20px;
+	}
+
+	.buttons-container {
+		flex-direction: column; /* Los botones se apilan verticalmente */
+		gap: 15px;
+	}
+}
+
+/* 🛑 Ajuste extra para pantallas muy pequeñas */
+@media (max-width: 480px) {
+	.page-title {
+		font-size: 36px; /* Aún más pequeño para móviles pequeños */
+	}
+
+	.comic-bubble-button {
+		width: 90%;
+		font-size: 16px;
+		padding: 10px 15px;
+	}
 }
