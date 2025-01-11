@@ -1,0 +1,97 @@
+/* Navbar con estilo cómic */
+.navbar-invisible {
+	background-color: #FFD700; /* Fondo amarillo */
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+	padding: 15px 30px;
+	position: fixed;
+	top: 0;
+	width: 100%;
+	z-index: 10;
+
+}
+
+/* Logo con estilo más destacado */
+.navbar-logo .navbar-brand {
+	color: #000000;
+	font-family: 'Rubik Vinyl', serif;
+	font-size: 2rem;
+	text-decoration: none;
+	text-shadow: 2px 2px 0px #000000; /* Sombra tipo cómic */
+	transition: transform 0.3s;
+}
+
+/* Efecto hover en el logo */
+.navbar-logo .navbar-brand:hover {
+	transform: scale(1.1);
+}
+
+/* Botón estilo globo de cómic */
+.navbar-bubble-button {
+	position: relative;
+	background-color: #ffffff;
+	color: #000000;
+	border: 3px solid #000000;
+	border-radius: 20px;
+	padding: 10px 20px;
+	font-size: 1rem;
+	font-weight: bold;
+	cursor: pointer;
+	box-shadow: 3px 3px 0px #000000;
+	transition: transform 0.3s, box-shadow 0.3s;
+}
+
+/* Cola del globo */
+.navbar-bubble-button::after {
+	content: '';
+	position: absolute;
+	bottom: -12px;
+	left: 20px;
+	width: 0;
+	height: 0;
+	border: 10px solid transparent;
+	border-top-color: #ffffff;
+	border-bottom: 0;
+	border-right: 0;
+	transform: rotate(-45deg);
+	box-shadow: -2px 2px 0px #000000;
+}
+
+/* Hover del botón */
+.navbar-bubble-button:hover {
+	transform: scale(1.05);
+	box-shadow: 5px 5px 0px #000000;
+	background-color: #f0f0f0;
+}
+
+/* Pills con estilo cómic */
+.navbar-pills {
+	display: flex;
+	gap: 15px;
+}
+
+.pill {
+	background-color: #ffffff;
+	color: #000000;
+	border: 3px solid #000000;
+	border-radius: 25px;
+	padding: 8px 18px;
+	font-size: 0.9rem;
+	font-weight: bold;
+	box-shadow: 3px 3px 0px #000000;
+	transition: transform 0.3s, background-color 0.3s;
+	cursor: default;
+}
+
+/* Hover de las pills */
+.pill:hover {
+	background-color: #000000;
+	color: #FFD700;
+	transform: scale(1.05);
+}
+
+/* Enlace del logo sin subrayado */
+.logo-link {
+	text-decoration: none;
+}

@@ -1,7 +1,74 @@
-/*
-    home.css: This website contains selectors only used in home.css
+/* Fuente original Rubik Vinyl */
+@import url('https://fonts.googleapis.com/css2?family=Rubik+Vinyl&display=swap');
 
-    All pages share the styles on index.css but you should create 
-    one more css for each page that will contain the selected used 
-    on that page only (the ones not reused in other pages).
-*/
+/* Contenedor principal */
+.home-container {
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	align-items: center;
+	min-height: calc(100vh - 120px);
+	background-color: #FFD700; /* Fondo amarillo */
+	padding: 40px 20px 80px;
+	box-sizing: border-box;
+}
+
+/* Título con fuente original */
+.page-title {
+	font-family: 'Rubik Vinyl', serif;
+	font-size: 100px;
+	color: #000000;
+	margin-top: 20px;
+	margin-bottom: 80px;
+	text-align: center;
+	word-break: break-word;
+}
+
+/* Contenedor de los botones alineados horizontalmente */
+.buttons-container {
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	gap: 40px;
+	margin-top: 20px;
+}
+
+/* Botón estilo globo de cómic */
+.comic-bubble-button {
+	position: relative;
+	background-color: #ffffff;
+	color: #000000;
+	border: 4px solid #000000;
+	border-radius: 20px;
+	padding: 20px 40px;
+	font-size: 22px;
+	font-weight: bold;
+	cursor: pointer;
+	text-align: center;
+	box-shadow: 4px 4px 0px #000000;
+	transition: transform 0.3s, box-shadow 0.3s;
+	font-family: 'Rubik Vinyl', serif; /* Mantener la fuente */
+}
+
+/* Pseudo-elemento para la "cola" del globo */
+.comic-bubble-button::after {
+	content: '';
+	position: absolute;
+	bottom: -20px;
+	left: 30px;
+	width: 0;
+	height: 0;
+	border: 15px solid transparent;
+	border-top-color: #ffffff;
+	border-bottom: 0;
+	border-right: 0;
+	transform: rotate(-45deg);
+	box-shadow: -2px 2px 0px #000000;
+}
+
+/* Efecto hover */
+.comic-bubble-button:hover {
+	transform: scale(1.08);
+	box-shadow: 6px 6px 0px #000000;
+	background-color: #f0f0f0;
+}
