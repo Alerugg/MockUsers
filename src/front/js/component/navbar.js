@@ -16,7 +16,7 @@ export const Navbar = () => {
 			</div>
 			<div className="navbar-button-container">
 				<Link to="/demo">
-					<button className="navbar-button">Demo</button>
+					<button className="navbar-bubble-button">Demo</button>
 				</Link>
 			</div>
 		</nav>
