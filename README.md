@@ -1,149 +1,116 @@
+# Mock Users API v2 🚀
 
-# Mock Users API 🌟
-
-¡Bienvenido a Mock Users API! Esta herramienta fue creada para desarrolladores que necesitan poblar sus aplicaciones con datos de usuario de manera rápida y sencilla. Perfecta para pruebas, desarrollo y demos.
+Bienvenido a **Mock Users API v2**, la herramienta definitiva para desarrolladores que buscan poblar sus aplicaciones con datos de usuario realistas y congruentes. Ahora con autenticación segura, protección de rutas, y datos optimizados. Ideal para pruebas, desarrollo y demostraciones.
 
 ---
 
-## 🚀 Demo en vivo
+## 🌐 Demo en vivo
 
-Prueba la API directamente desde nuestra demo en vivo:  
-[**Enlace a la Demo**](https://mockusers-d417.onrender.com)
+Accede a la demo aquí:  
+[**Mock Users API v2 - Demo**](https://mockusers-d417.onrender.com)
+
+⚠️ **Nota:** La API está alojada en un servidor gratuito (Render). Si no ha tenido actividad, puede tardar hasta **40 segundos** en responder mientras se reactiva.
+
+---
+
+## 🛠 Tecnologías utilizadas
+
+- **Backend:** Python, Flask, Flask-RESTful, Flask-JWT-Extended, SQLAlchemy
+- **Base de Datos:** PostgreSQL, SQLAlchemy ORM
+- **Seguridad:** Autenticación JWT, Flask-CORS, Password Hashing (Werkzeug)
+- **Deployment:** Render, Neon
+- **Gestión de dependencias:** Pipenv
 
 ---
 
 ## 💡 Características
 
-- **Endpoint dinámico:** `/api/randomUsers/<count>` para generar cualquier cantidad de usuarios al instante.
-- **Interfaz de exploración:** Una demo interactiva para ver los resultados de los endpoints.
-- **Fácil integración:** Compatible con cualquier stack de desarrollo.
+- **Autenticación JWT:** Rutas protegidas con inicio de sesión para administrar usuarios.
+- **Generación de datos realistas:** Datos congruentes según país, ciudad, identificación y contacto.
+- **CRUD completo de usuarios:** Crear, leer, y eliminar usuarios de manera segura.
+- **Generación dinámica de usuarios:** Crea usuarios aleatorios con `/api/randomUsers/<count>`.
+- **Gestión de administrador:** Registro e inicio de sesión para administrar usuarios.
+- **Optimización de base de datos:** Mejor rendimiento en consultas y almacenamiento.
 
 ---
 
 ## 📚 Endpoints
 
-### **`/api/users`**
-Devuelve una lista de 1000 usuarios.  
-**Ejemplo de respuesta:**
-```json
-[
-  {
-    "address": {
-      "city": "San José",
-      "country": "Costa Rica",
-      "street": "El Prado"
-    },
-    "birth_country": "Uruguay",
-    "birthday": "1975-10-04",
-    "email": "javier.cruz522@hotmail.com",
-    "id": 524,
-    "identification": "153562Q625",
-    "last_name": "Cruz",
-    "name": "Javier",
-    "password": "javiercruz123",
-    "phone": "+777-8015173"
-  }
-]
-```
+### 🔐 **Autenticación (Admin)**
 
-### **`/api/randomUsers/<count>`**
-Endpoint dinámico que devuelve una cantidad aleatoria de usuarios según el número especificado en el parámetro `<count>`.  
-Por ejemplo, si haces una solicitud a `/api/randomUsers/2`, obtendrás algo como esto:
+- **`POST /api/register-admin`** → Registrar administrador (solo el primero).
+- **`POST /api/login`** → Iniciar sesión y obtener un token JWT.
 
-**Ejemplo de respuesta:**
-```json
-[
+### 👥 **Usuarios (Protegido con JWT)**
+
+- **`POST /api/users`** → Crear usuarios (uno o varios).  
+  **Header:** `Authorization: Bearer <token>`
+  ```json
   {
+    "email": "juan.perez@example.com",
+    "name": "Juan",
+    "last_name": "Perez",
     "address": {
-      "city": "San José",
-      "country": "Costa Rica",
-      "street": "El Prado"
+      "street": "Av. Siempre Viva 742",
+      "city": "Buenos Aires",
+      "country": "Argentina"
     },
-    "birth_country": "Uruguay",
-    "birthday": "1975-10-04",
-    "email": "javier.cruz522@hotmail.com",
-    "id": 524,
-    "identification": "153562Q625",
-    "last_name": "Cruz",
-    "name": "Javier",
-    "password": "javiercruz123",
-    "phone": "+777-8015173"
-  },
-  {
-    "address": {
-      "city": "Madrid",
-      "country": "Spain",
-      "street": "Las Heras"
-    },
-    "birth_country": "Costa Rica",
-    "birthday": "1982-07-01",
-    "email": "sebastián.jimenez57@outlook.com",
-    "id": 58,
-    "identification": "3Y36",
-    "last_name": "Jimenez",
-    "name": "Sebastián",
-    "password": "sebastiánjimenez123",
-    "phone": "+953-3610768"
+    "phone": "+54-11-1234-5678",
+    "identification": "12345678",
+    "birthday": "1990-05-20",
+    "birth_country": "Argentina",
+    "password": "contraseñaSegura123"
   }
-]
-```
+  ```
+
+- **`GET /api/users`** → Listar todos los usuarios.
+
+- **`GET /api/randomUsers/<count>`** → Obtener `<count>` usuarios aleatorios.
+
+- **`DELETE /api/users`** → Eliminar todos los usuarios.  
+  **Header:** `Authorization: Bearer <token>`
+
+- **`DELETE /api/users/<user_id>`** → Eliminar usuario por ID.  
+  **Header:** `Authorization: Bearer <token>`
 
 ---
 
-## 🛠 Instalación
+## 🚀 Instalación
 
-1. Clona el repositorio:  
+1. **Clona el repositorio:**
    ```bash
    git clone https://github.com/tuusuario/mock-users-api.git
    cd mock-users-api
    ```
 
-2. Configura el backend:
-   - Asegúrate de tener Python 3.10, Node.js y PostgreSQL instalados.
-   - Instala los paquetes backend:
-     ```bash
-     pipenv install
-     ```
-   - Crea y configura el archivo `.env` basado en `.env.example`:
-     ```bash
-     cp .env.example .env
-     ```
-   - Inicia la base de datos:
-     ```bash
-     pipenv run init
-     pipenv run migrate
-     pipenv run upgrade
-     ```
+2. **Configura el entorno:**
+   ```bash
+   pipenv install
+   cp .env.example .env
+   pipenv run init
+   pipenv run migrate
+   pipenv run upgrade
+   ```
 
-3. Configura el frontend:
-   - Instala los paquetes frontend:
-     ```bash
-     npm install
-     ```
-   - Inicia la aplicación frontend:
-     ```bash
-     npm run start
-     ```
-
-4. Ejecuta la aplicación completa:
+3. **Ejecuta la aplicación:**
    ```bash
    pipenv run start
    ```
 
 ---
 
-## 🌟 Próximas mejoras (v2)
+## 🌟 Próximas mejoras (v3)
 
-La próxima versión incluirá:
-- Datos más realistas y robustos, incluyendo estado civil, hobbies, ingresos y más.
-- Posibilidad de filtrar usuarios por país o región.
-- Soporte para datos congruentes como números de teléfono y direcciones específicos por país.
-
-¡Mantente atento para más actualizaciones!
+- Inclusión de campos adicionales: **estado civil**, **número de hijos**, **estado laboral**.
+- Filtros por **nacionalidad** o **país de residencia**.
+- Datos aún más detallados y consistentes.
 
 ---
 
 ## 📬 Contacto
 
-Para sugerencias o mejoras, no dudes en crear un issue o contactarnos en [Linkedin](https://www.linkedin.com/in/aleruggeril/).
+¿Ideas o sugerencias? ¡Contáctanos!  
+🔗 [LinkedIn - Alejandro Ruggeri](https://www.linkedin.com/in/aleruggeril/)
+
+---
 
